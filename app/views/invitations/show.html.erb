@@ -17,3 +17,4 @@
 <p><strong><%= @invitation.bridename %></strong><br/><%= @invitation.bridephone %><br/><%= @invitation.brideemail %></p>
 
 <%= link_to 'Edit', edit_invitation_path %>
+<%= link_to 'Destroy', @invitation, method: :delete, data: { confirm: 'Are you sure?' } %>

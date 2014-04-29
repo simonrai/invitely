@@ -1,7 +1,7 @@
 class InvitationsController < ApplicationController
 
   before_filter :authenticate_user!, only: [:new, :edit, :update, :create, :destroy]
-  # before_filter :check_user, only: [:edit]
+  before_filter :check_user, only: [:edit]
 
 	def index
 		@invitations = Invitation.all
@@ -16,6 +16,12 @@ class InvitationsController < ApplicationController
 
 	def show
     @invitation = Invitation.find(params[:id])
+  end
+
+  def destroy
+    @invitation = Invitation.find(params[:id])
+    @invitation.destroy
+    redirect_to root_path, notice: "Invitation was deleted successfully"
   end
 
   def create
@@ -37,10 +43,10 @@ class InvitationsController < ApplicationController
     )
   end
 
-  # def check_user
-  #   if current_user != @invitation.user
-  #     redirect_to root_path, alert: "Sorry, you cannot edit this listing."
-  #   end
-  # end
+  def check_user
+    if current_user != @invitation.user
+      redirect_to root_path, alert: "Sorry, you cannot edit this listing."
+    end
+  end
 
 end
