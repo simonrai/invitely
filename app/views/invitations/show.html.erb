@@ -1,1 +1,17 @@
-<h1>Invitation View</h1>
+<h1>You're Invited!</h1>
+
+<h1><%= @invitation.bridename %> and <%= @invitation.groomname %></h1>
+<h3>are getting married on <%= @invitation.date %></h3>
+<h3>in <%= @invitation.location %></h3>
+
+<h2>Events</h2>
+
+<p>Sample Event 1 - Click here to <a href="#">RSVP</a></p>
+<p>Sample Event 2 - Click here to <a href="#">RSVP</a></p>
+<p>Sample Event 3 - Click here to <a href="#">RSVP</a></p>
+
+<h2>Contact Info</h2>
+
+<p><strong><%= @invitation.groomname %></strong><br/><%= @invitation.groomphone %><br/><%= @invitation.groomemail %></p>
+
+<p><strong><%= @invitation.bridename %></strong><br/><%= @invitation.bridephone %><br/><%= @invitation.brideemail %></p>
