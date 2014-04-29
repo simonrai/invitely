@@ -1,7 +1,7 @@
 class InvitationsController < ApplicationController
 
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_filter :check_user, only: [:edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :edit, :update, :create, :destroy]
+  # before_filter :check_user, only: [:edit]
 
 	def index
 		@invitations = Invitation.all
@@ -37,10 +37,10 @@ class InvitationsController < ApplicationController
     )
   end
 
-  def check_user
-    if current_user != @listing.user
-      redirect_to root_path, alert: "Sorry, you cannot edit this listing."
-    end
-  end
+  # def check_user
+  #   if current_user != @invitation.user
+  #     redirect_to root_path, alert: "Sorry, you cannot edit this listing."
+  #   end
+  # end
 
 end
