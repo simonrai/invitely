@@ -23,7 +23,7 @@ class InvitationsController < ApplicationController
     @invitation.user_id = current_user.id
 
   if @invitation.save
-    redirect_to root_path, notice: "Invitation was submitted successfully!"
+    redirect_to invitation_path(@invitation), notice: "Invitation was submitted successfully!"
   else
     render :new
   end
