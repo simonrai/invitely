@@ -18,3 +18,4 @@
 
 <%= link_to 'Edit', edit_invitation_path %>
 <%= link_to 'Destroy', @invitation, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Add Event', new_invitation_event_path(@invitation) %>
