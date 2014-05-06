@@ -1,14 +1,21 @@
 <center>
 
-<h2><%= @invitation.bridename %> and <%= @invitation.groomname %></h2>
-<h4>are getting married on <%= @invitation.date %></h4>
+<h3><%= @invitation.bridename %> and <%= @invitation.groomname %></h3>
+<h4>are getting married</h4>
+<h4>on <%= @invitation.date.strftime("%B %d, %Y") %></h4>
 <h4>in <%= @invitation.location %></h4>
 
 <h3>Events</h3>
 
-<p>Sample Event 1 - Click here to <a href="#">RSVP</a></p>
-<p>Sample Event 2 - Click here to <a href="#">RSVP</a></p>
-<p>Sample Event 3 - Click here to <a href="#">RSVP</a></p>
+<% @invitation.events.each do |e| %>
+    <h4><%= e.name %></h4>
+    <p><%= e.date.strftime("%B %d, %Y") %> - <%= e.time.strftime("%l:%M %P") %></p>
+    <p><%= e.location %></p>
+    <p><%= e.notes %></p>
+    <% if e.rsvp %>
+    <p><strong>Please <a href="#">RSVP</a></strong></p>
+    <% end %>
+<% end %>
 
 <h3>Contact Info</h3>
 
@@ -20,8 +27,6 @@
 
 </div>
 
-<br/><%= link_to 'Edit', edit_invitation_path %>
-<%= link_to 'Delete', @invitation, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Add Event', new_invitation_event_path(@invitation) %>
+<br/><%= link_to 'Edit Invitation', edit_invitation_path %>. <%= link_to 'Delete Invitation', @invitation, method: :delete, data: { confirm: 'Are you sure?' } %>. <%= link_to 'Add Event', new_invitation_event_path(@invitation) %>.
 
 </center>

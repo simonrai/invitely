@@ -6,17 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'jquery-1.8.3.min' %>
-  <%= javascript_include_tag 'jquery-ui-1.10.3.custom.min' %>
-  <%= javascript_include_tag 'jquery.ui.touch-punch.min' %>
-  <%= javascript_include_tag 'bootstrap.min' %>
-  <%= javascript_include_tag 'bootstrap-select' %>
-  <%= javascript_include_tag 'bootstrap-switch' %>
-  <%= javascript_include_tag 'flatui-checkbox' %>
-  <%= javascript_include_tag 'flatui-radio' %>
-  <%= javascript_include_tag 'jquery.tagsinput' %>
-  <%= javascript_include_tag 'jquery.placeholder' %>
-
   <%= csrf_meta_tags %>
 
 </head>
@@ -26,8 +15,8 @@
 
 <div class="container">
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<center><p class="notice"><%= notice %></p></center>
+<center><p class="alert"><%= alert %></p></center>
 
 <%= yield %>
 
@@ -35,5 +24,4 @@
 
 </div>
 
-</body>
 </html>
