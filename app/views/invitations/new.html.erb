@@ -1,30 +1,46 @@
 <h1>New Invitation</h1>
 
 <%= form_for(@invitation) do |f| %>
-  <div>
-    <%= f.label "date" %><br/>
-    <%= f.date_field "date" %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h5>Date</h5>
+      <%= f.date_field "date" %>
+    </div>
+  
+    <div class="col-md-6">
+      <h5>Location</h5>
+      <%= f.text_field "location" %>
+    </div>
   </div>
-  <div>
-    <%= f.label "location" %><br/>
-    <%= f.text_field "location" %>
-  </div>
+
+  <br/><div class="row">
+
+  <div class="col-md-6">
+  <h5>Groom Info</h5>
   <div>
     <%= f.label "Groom Name" %><br/>
     <%= f.text_field "groomname" %>
   </div>
+  
   <div>
     <%= f.label "Groom Phone" %><br/>
     <%= f.text_field "groomphone" %>
   </div>
+  
   <div>
     <%= f.label "Groom Email" %><br/>
     <%= f.text_field "groomemail" %>
   </div>
+  
   <div>
     <%= f.label "Groom Bio" %><br/>
     <%= f.text_field "groombio" %>
   </div>
+  </div>
+
+  <div class="col-md-6">
+  <h5>Bride Info</h5>  
   <div>
     <%= f.label "Bride Name" %><br/>
     <%= f.text_field "bridename" %>
@@ -41,5 +57,9 @@
     <%= f.label "Bride Bio" %><br/>
     <%= f.text_field "bridebio" %>
   </div>
-  <div><%= submit_tag "Create" %></div>
+  </div>
+
+  </div>
+
+  <br/><div><%= submit_tag "Create" %></div>
 <% end %>

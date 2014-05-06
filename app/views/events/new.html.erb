@@ -23,5 +23,14 @@
   	<%= f.label "RSVP?" %><br/>
   	<%= f.select :rsvp, [['Yes', true], ['No', false]] %>
   </div>
-  <div><%= submit_tag "Create" %></div>
+  <div>
+  	<%= f.label "Event Notes" %>
+  	<%= f.text_field "notes" %>
+  </div>
+  <div>
+  	<%= f.label "Event Order" %>
+  	<%= f.number_field "order" %>
+  <div>
+  	<%= submit_tag "Create" %>
+	</div>
 <% end %>
