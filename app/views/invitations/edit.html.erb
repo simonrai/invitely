@@ -1,45 +1,69 @@
 <h1>Edit Invitation</h1>
 
 <%= form_for(@invitation) do |f| %>
-  <div>
-    <%= f.label "date" %><br/>
-    <%= f.date_field "date" %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h5>Date</h5>
+      <div class="form-group">
+      <%= f.date_field "date", class: "form-control" %>
+      </div>
+    </div>
+  
+    <div class="col-md-6">
+      <h5>Location</h5>
+      <div class="form-group">
+      <%= f.text_field "location", class: "form-control" %>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= f.label "location" %><br/>
-    <%= f.text_field "location" %>
-  </div>
-  <div>
+
+  <br/><div class="row">
+
+  <div class="col-md-6">
+  <h5>Groom Info</h5>
+  <div class="form-group">
     <%= f.label "Groom Name" %><br/>
-    <%= f.text_field "groomname" %>
+    <%= f.text_field "groomname", class: "form-control" %>
   </div>
-  <div>
+  
+  <div class="form-group">
     <%= f.label "Groom Phone" %><br/>
-    <%= f.text_field "groomphone" %>
+    <%= f.text_field "groomphone", class: "form-control" %>
   </div>
-  <div>
+  
+  <div class="form-group">
     <%= f.label "Groom Email" %><br/>
-    <%= f.text_field "groomemail" %>
+    <%= f.text_field "groomemail", class: "form-control" %>
   </div>
-  <div>
+  
+  <div class="form-group">
     <%= f.label "Groom Bio" %><br/>
-    <%= f.text_field "groombio" %>
+    <%= f.text_area "groombio", class: "form-control", :rows => 4 %>
   </div>
-  <div>
+  </div>
+
+  <div class="col-md-6">
+  <h5>Bride Info</h5>  
+  <div class="form-group">
     <%= f.label "Bride Name" %><br/>
-    <%= f.text_field "bridename" %>
+    <%= f.text_field "bridename", class: "form-control" %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label "Bride Phone" %><br/>
-    <%= f.text_field "bridephone" %>
+    <%= f.text_field "bridephone", class: "form-control" %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label "Bride Email" %><br/>
-    <%= f.text_field "brideemail" %>
+    <%= f.text_field "brideemail", class: "form-control" %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label "Bride Bio" %><br/>
-    <%= f.text_field "bridebio" %>
+    <%= f.text_area "bridebio", class: "form-control", :rows => 4 %>
   </div>
-  <div><%= submit_tag "Create" %></div>
+  </div>
+
+  </div>
+
+  <br/><div><%= submit_tag "Save Changes", class: "btn btn-primary btn-wide" %></div>
 <% end %>
