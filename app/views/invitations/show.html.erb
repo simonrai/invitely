@@ -1,15 +1,12 @@
 <center>
 
-<h3 style="color:#8E44AD;"><%= @invitation.bridename %> and <%= @invitation.groomname %></h3>
-<h4>are getting married</h4>
-<h4>on <%= @invitation.date.strftime("%B %d, %Y") %></h4>
-<h4>in <%= @invitation.location %></h4>
+<p style="color:#8E44AD;font-size:65px;font-family:Pinyon Script;"><%= @invitation.bridename %> &amp; <%= @invitation.groomname %></p>
+<h4>are getting married!</h4>
+<h4><%= @invitation.date.strftime("%B %d, %Y") %></h4>
+<h4><%= @invitation.location %></h4>
 <br/>
 
-<h3 style="color:#8E44AD;">Events</h3>
-	<h5><% if user_signed_in? %>
-	<%= link_to 'Add Event', new_invitation_event_path(@invitation) %>.
-	<% end %></h5>
+<h3 style="color:#8E44AD;font-family:Pinyon Script;font-size:46px;">Events</h3>
 
 <% @invitation.events.each do |e| %>
     <h4><%= e.name %></h4>
@@ -21,9 +18,13 @@
     <p><%= e.date.strftime("%B %d, %Y") %> - <%= e.time.strftime("%l:%M %P") %></p>
     <p><%= e.location %></p>
     <p><%= e.notes %></p>
-<% end %></br>
+<% end %>
 
-<h3 style="color:#8E44AD;">Contact Info</h3>
+    <h5><% if user_signed_in? %>
+    <%= link_to 'Add Event', new_invitation_event_path(@invitation) %>.
+    <% end %></h5>
+
+<br/><h3 style="color:#8E44AD;font-family:Pinyon Script;font-size:46px;">Contact Info</h3>
 
 <div class="row">
 
@@ -37,5 +38,7 @@
 <h5><%= link_to 'Edit Invitation', edit_invitation_path %>.
 <%= link_to 'Delete Invitation', @invitation, method: :delete, data: { confirm: 'Are you sure?' } %>.</h5>
 <% end %>
+
+<p style="font-size:48px;font-family:Great Vibes;">We look forward to celebrating with you!</p>
 
 </center>
