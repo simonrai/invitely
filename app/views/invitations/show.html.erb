@@ -6,25 +6,28 @@
 <h4><%= @invitation.location %></h4>
 <br/>
 
-<h3 style="color:#8E44AD;font-family:Pinyon Script;font-size:46px;">Events</h3>
+<p style="color:#8E44AD;font-family:Pinyon Script;font-size:46px;">Events</p>
 
 <% @invitation.events.each do |e| %>
     <h4><%= e.name %></h4>
     <% if e.rsvp %>
-    <p>Please <a href="#">RSVP</a>.</p>
+    <p>Please <a href="#">RSVP</a></p>
     <% else %>
     <p>No RSVP Required.</p>
     <% end %>
     <p><%= e.date.strftime("%B %d, %Y") %> - <%= e.time.strftime("%l:%M %P") %></p>
     <p><%= e.location %></p>
     <p><%= e.notes %></p>
+    <% if user_signed_in? %>
+    <p><%= link_to 'View/Edit', invitation_event_path(@invitation, e) %></p>
+    <% end %><br/>
 <% end %>
 
     <h5><% if user_signed_in? %>
     <%= link_to 'Add Event', new_invitation_event_path(@invitation) %>.
     <% end %></h5>
 
-<br/><h3 style="color:#8E44AD;font-family:Pinyon Script;font-size:46px;">Contact Info</h3>
+<p style="color:#8E44AD;font-family:Pinyon Script;font-size:46px;">Contact Info</p>
 
 <div class="row">
 

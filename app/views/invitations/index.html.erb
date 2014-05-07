@@ -1,0 +1,5 @@
+<% @invitations.each do |e| %>
+<%= e.groomname %> and <%= e.bridename %> 
+(<%= e.date.strftime("%B %d, %Y") %> at
+<%= e.location %>)<br/>
+<% end %>

@@ -11,7 +11,7 @@ class EventsController < ApplicationController
     @event.invitation_id = @invitation.id
 
     if @event.save
-      redirect_to invitation_path(@invitation), notice: "Event created successfully"
+      redirect_to invitation_path(@invitation), notice: "Event successfully added."
     else
       render :new
     end
@@ -22,8 +22,18 @@ class EventsController < ApplicationController
 	end
 
 	def update
-		@event = Event.find(params[:id])
+    @event = @invitation.events.find(params[:id])
+
+		if @event.update_attributes(event_params)
+      redirect_to invitation_path(@invitation), notice: "Event successfully updated."
+    else
+      render :edit
+    end
 	end
+
+	def show
+    @event = Event.find(params[:id])
+  end
 
 	protected
 
