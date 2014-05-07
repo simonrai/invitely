@@ -1,4 +1,4 @@
-<h2>Edit an event.</h2>
+<h2>Edit event.</h2>
 
 <%= form_for([@invitation, @event]) do |f| %>
   <div class="form-group">
@@ -29,6 +29,6 @@
   	<%= f.label "Event Order" %>
   	<%= f.number_field "order", class: "form-control" %>
   <br/><div class="form-group">
-  	<%= submit_tag "Add Event", class: "btn btn-primary btn-wide" %>
+  	<%= submit_tag "Save Changes", class: "btn btn-primary btn-wide" %>
 	</div>
 <% end %>
